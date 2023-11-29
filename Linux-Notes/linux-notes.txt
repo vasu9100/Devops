@@ -1,0 +1,82 @@
+### Linux Commands and Permissions
+
+**Commands:**
+- `ls`
+- `cat`
+- `touch`
+- `rm`
+- `rmdir`
+- `mkdir`
+- `cut`
+- `awk`
+- `curl`
+- `wget`
+- `grep`
+- `head`
+- `tail`
+- `vim editor`
+- `cp`
+- `mv`
+
+**Permissions:**
+- `-rw-    rw-    r--`
+- `user    group    others`
+- `u        g        o`
+
+**Permission Values:**
+- `R` (Read) -> 4
+- `W` (Write) -> 2
+- `X` (Execute) -> 1 (for running commands and shell scripts)
+
+**User Information (sivakumar - DevOps Team):**
+- User (u) = owner
+- Group (g) = devops
+- Others (o) = testing, development team
+
+**User Management:**
+1. Ramesh joined DevOps team.
+   - `useradd <user-name>`
+   - `passwd <user-name>`
+   - `/etc/passwd`: User entries
+   - `/etc/ssh/sshd_config`: Enable password authentication
+   - `sshd -t`: Check syntax of SSH configuration file
+   - `systemctl restart sshd`
+
+2. Group Creation:
+   - `groupadd <group-name>`
+
+3. Adding User to Group:
+   - `usermod -g devops ramesh`
+
+4. Secondary Group Access:
+   - `usermod -aG testing ramesh`
+   - `gpasswd -d ramesh testing`: Delete Ramesh from the testing group
+
+**User Leaving Organization:**
+   - `userdel <user-name>`: Remove user from Linux
+
+**Ownership Management:**
+   - `chown <user>:<group> file-name`
+   - `chown <user>:<group> -R folder`
+
+**Process Management:**
+   - `ps`: List processes
+   - `kill PID`: Terminate process (may or may not be successful)
+   - `kill -9`: Forcefully terminate process
+
+**Foreground and Background Processes:**
+   - Foreground: Blocks terminal
+   - Background: Runs in the background
+
+**Node.js Project:**
+   - `ps -ef | grep nodejs`: List Node.js processes
+
+**Package Management:**
+   - `yum install package-name`: Install packages (used in RHEL, CentOS, Fedora, AWS Linux 2)
+
+**Enabling SSH Access for Raheem:**
+   1. Create Raheem user.
+   2. Obtain Raheem's public key and keep the private key securely.
+
+**Numeric Permissions:**
+   - `700`: User (RWX), Group, Others
